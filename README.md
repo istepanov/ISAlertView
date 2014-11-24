@@ -1,6 +1,7 @@
-# Custom iOS7 AlertView
+# ISAlertView
 
-`v0.81`
+
+`v0.1`
 
 The addSubview is not available in UIAlertView in iOS7 any more. The view hierarchy for this class is private and must not be modified.
 
@@ -14,10 +15,6 @@ As simple as adding the following files to your project:
 
 * CustomIOS7AlertView.h
 * CustomIOS7AlertView.m
-
-## Change notes
-
-The initWithParentView method is now deprecated. Please use the init method instead, where you don't need to pass a parent view at all. **In case the init doesn't work for you, please leave a note or open an issue here.**
 
 ## Quick start guide
 
@@ -99,31 +96,16 @@ The initWithParentView method is now deprecated. Please use the init method inst
 [alertView setDelegate:self];
     ```
 
-## Todos
+## Credits
 
-This is a really quick implementation, and there are a few things missing:
+This project is a fork of [Custom iOS7 AlertView](https://github.com/wimagguc/ios-custom-alertview) made by Richard Dancsi.
 
-* Adding more buttons: they don't exactly match the look with that of on iOS7
-
-* Rotation: rotates wrong with the keyboard on
-
-## Special thanks to
-
-* [@tamasdancsi](https://github.com/tamasdancsi) for his support with the initial code  
-* [@dingosky](https://github.com/dingosky) for his work on the parallax effects code  
-* [@raspu](https://github.com/raspu) for his work on the protocol delegates, iOS6 support and onButtonClick blocks  
-* [@sbandol](https://github.com/sbandol) for his idea on adding the AlertView as the top most view in the hierarchy
-* [@scorpiozj](https://github.com/scorpiozj) for his work on the rotation code
-* [@kwent](https://github.com/kwent) for adding performance optimisations
-* [@thomasaw](https://github.com/thomasaw) for the refract on the deprecated initWithParentview
 
 ## License
 
-**Please feel free to push back anything you think is useful for the project.**
 
-`License info is here for request. Please suggest a better one if you are familiar with copyright.`
-
-Copyright (c) 2013 Richard Dancsi
+Original work Copyright (c) 2013 Richard Dancsi<br />
+Modified work Copyright (c) 2014 Ilya Stepanov
 
 Lincesed under [The MIT License](http://opensource.org/licenses/MIT) (MIT)
 
@@ -145,19 +127,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-## Other projects
-
-Check out [AppWoodoo](http://www.appwoodoo.com/), our remote app settings (and A/B testing) service. It's open source and free to use.
-
-Some more of my free stuff for web devs at [Github](https://github.com/wimagguc?tab=repositories).
-
-Project updates [newsletter](http://wimagguc.us4.list-manage.com/subscribe/post?u=83343dbd708d35d76618f66c5&id=da7cc7f1dc)
-
-## About
-
-Richard Dancsi  
-[www.wimagguc.com](http://www.wimagguc.com/)  
-
-twitter: [@wimagguc](http://twitter.com/wimagguc)  
-linkedin: [linkedin.com/in/richarddancsi](http://linkedin.com/in/richarddancsi)  
-gplus: [plus.google.com/u/0/115939246085616544919](https://plus.google.com/u/0/115939246085616544919)  
