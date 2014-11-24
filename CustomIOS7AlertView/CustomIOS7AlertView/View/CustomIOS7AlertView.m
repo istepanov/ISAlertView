@@ -108,12 +108,12 @@ CGFloat buttonSpacerHeight = 0;
     }
 
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionCurveEaseInOut
-					 animations:^{
-						 self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4f];
+                   animations:^{
+                         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4f];
                          dialogView.layer.opacity = 1.0f;
                          dialogView.layer.transform = CATransform3DMakeScale(1, 1, 1);
-					 }
-					 completion:NULL
+                     }
+                     completion:NULL
      ];
 }
 
@@ -148,18 +148,18 @@ CGFloat buttonSpacerHeight = 0;
     dialogView.layer.opacity = 1.0f;
 
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
-					 animations:^{
-						 self.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.0f];
+                     animations:^{
+                         self.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.0f];
                          dialogView.layer.transform = CATransform3DConcat(currentTransform, CATransform3DMakeScale(0.6f, 0.6f, 1.0));
                          dialogView.layer.opacity = 0.0f;
-					 }
-					 completion:^(BOOL finished) {
+                     }
+                     completion:^(BOOL finished) {
                          for (UIView *v in [self subviews]) {
                              [v removeFromSuperview];
                          }
                          [self removeFromSuperview];
-					 }
-	 ];
+                     }
+     ];
 }
 
 - (void)setSubView: (UIView *)subView
@@ -352,10 +352,10 @@ CGFloat buttonSpacerHeight = 0;
     }
 
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
-					 animations:^{
+                     animations:^{
                          dialogView.transform = rotation;
-					 }
-					 completion:^(BOOL finished){
+                     }
+                     completion:^(BOOL finished){
                          // fix errors caused by being rotated one too many times
                          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                              UIInterfaceOrientation endInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
@@ -364,7 +364,7 @@ CGFloat buttonSpacerHeight = 0;
                              }
                          });
                      }
-	 ];
+     ];
 
 }
 
@@ -383,11 +383,11 @@ CGFloat buttonSpacerHeight = 0;
     }
 
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
-					 animations:^{
+                     animations:^{
                          dialogView.frame = CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - keyboardSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
-					 }
-					 completion:nil
-	 ];
+                     }
+                     completion:nil
+     ];
 }
 
 - (void)keyboardWillHide: (NSNotification *)notification
@@ -396,11 +396,11 @@ CGFloat buttonSpacerHeight = 0;
     CGSize dialogSize = [self countDialogSize];
 
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
-					 animations:^{
+                     animations:^{
                          dialogView.frame = CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
-					 }
-					 completion:nil
-	 ];
+                     }
+                     completion:nil
+     ];
 }
 
 @end
