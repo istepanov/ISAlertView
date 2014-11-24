@@ -22,14 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5EB26CC717EC5EEA00F0971C /* CustomIOS7AlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomIOS7AlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EB26CC717EC5EEA00F0971C /* ISAlertViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISAlertViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB26CCA17EC5EEB00F0971C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5EB26CCC17EC5EEB00F0971C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5EB26CCE17EC5EEB00F0971C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		5EB26CD217EC5EEB00F0971C /* CustomIOS7AlertView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CustomIOS7AlertView-Info.plist"; sourceTree = "<group>"; };
+		5EB26CD217EC5EEB00F0971C /* ISAlertViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ISAlertViewDemo-Info.plist"; sourceTree = "<group>"; };
 		5EB26CD417EC5EEB00F0971C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5EB26CD617EC5EEB00F0971C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5EB26CD817EC5EEB00F0971C /* CustomIOS7AlertView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomIOS7AlertView-Prefix.pch"; sourceTree = "<group>"; };
+		5EB26CD817EC5EEB00F0971C /* ISAlertViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ISAlertViewDemo-Prefix.pch"; sourceTree = "<group>"; };
 		5EB26CD917EC5EEB00F0971C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5EB26CDA17EC5EEB00F0971C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5EB26CDD17EC5EEB00F0971C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -60,7 +60,8 @@
 		5EB26CBE17EC5EEA00F0971C = {
 			isa = PBXGroup;
 			children = (
-				5EB26CD017EC5EEB00F0971C /* CustomIOS7AlertView */,
+				5EE9A9B817EC68650031B75E /* View */,
+				5EB26CD017EC5EEB00F0971C /* ISAlertViewDemo */,
 				5EB26CC917EC5EEA00F0971C /* Frameworks */,
 				5EB26CC817EC5EEA00F0971C /* Products */,
 			);
@@ -69,7 +70,7 @@
 		5EB26CC817EC5EEA00F0971C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5EB26CC717EC5EEA00F0971C /* CustomIOS7AlertView.app */,
+				5EB26CC717EC5EEA00F0971C /* ISAlertViewDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,10 +86,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5EB26CD017EC5EEB00F0971C /* CustomIOS7AlertView */ = {
+		5EB26CD017EC5EEB00F0971C /* ISAlertViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				5EE9A9B817EC68650031B75E /* View */,
 				5EB26CD917EC5EEB00F0971C /* AppDelegate.h */,
 				5EB26CDA17EC5EEB00F0971C /* AppDelegate.m */,
 				5EB26CE217EC5EEB00F0971C /* ViewController.h */,
@@ -96,7 +96,7 @@
 				5EB26D0217EC642000F0971C /* Images.xcassets */,
 				5EB26CD117EC5EEB00F0971C /* Supporting Files */,
 			);
-			path = CustomIOS7AlertView;
+			path = ISAlertViewDemo;
 			sourceTree = "<group>";
 		};
 		5EB26CD117EC5EEB00F0971C /* Supporting Files */ = {
@@ -105,10 +105,10 @@
 				5EE9A9BC17EC7EA00031B75E /* Resources */,
 				5EB26CDC17EC5EEB00F0971C /* Main_iPhone.storyboard */,
 				5EB26CDF17EC5EEB00F0971C /* Main_iPad.storyboard */,
-				5EB26CD217EC5EEB00F0971C /* CustomIOS7AlertView-Info.plist */,
+				5EB26CD217EC5EEB00F0971C /* ISAlertViewDemo-Info.plist */,
 				5EB26CD317EC5EEB00F0971C /* InfoPlist.strings */,
 				5EB26CD617EC5EEB00F0971C /* main.m */,
-				5EB26CD817EC5EEB00F0971C /* CustomIOS7AlertView-Prefix.pch */,
+				5EB26CD817EC5EEB00F0971C /* ISAlertViewDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -116,10 +116,10 @@
 		5EE9A9B817EC68650031B75E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5EE9A9B917EC68960031B75E /* CustomIOS7AlertView.h */,
 				5EE9A9BA17EC68960031B75E /* CustomIOS7AlertView.m */,
+				5EE9A9B917EC68960031B75E /* CustomIOS7AlertView.h */,
 			);
-			path = View;
+			name = View;
 			sourceTree = "<group>";
 		};
 		5EE9A9BC17EC7EA00031B75E /* Resources */ = {
@@ -133,9 +133,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5EB26CC617EC5EEA00F0971C /* CustomIOS7AlertView */ = {
+		5EB26CC617EC5EEA00F0971C /* ISAlertViewDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5EB26CFC17EC5EEB00F0971C /* Build configuration list for PBXNativeTarget "CustomIOS7AlertView" */;
+			buildConfigurationList = 5EB26CFC17EC5EEB00F0971C /* Build configuration list for PBXNativeTarget "ISAlertViewDemo" */;
 			buildPhases = (
 				5EB26CC317EC5EEA00F0971C /* Sources */,
 				5EB26CC417EC5EEA00F0971C /* Frameworks */,
@@ -145,9 +145,9 @@
 			);
 			dependencies = (
 			);
-			name = CustomIOS7AlertView;
+			name = ISAlertViewDemo;
 			productName = CustomIOS7AlertView;
-			productReference = 5EB26CC717EC5EEA00F0971C /* CustomIOS7AlertView.app */;
+			productReference = 5EB26CC717EC5EEA00F0971C /* ISAlertViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -159,7 +159,7 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Wimagguc;
 			};
-			buildConfigurationList = 5EB26CC217EC5EEA00F0971C /* Build configuration list for PBXProject "CustomIOS7AlertView" */;
+			buildConfigurationList = 5EB26CC217EC5EEA00F0971C /* Build configuration list for PBXProject "ISAlertViewDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -172,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5EB26CC617EC5EEA00F0971C /* CustomIOS7AlertView */,
+				5EB26CC617EC5EEA00F0971C /* ISAlertViewDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -312,9 +312,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CustomIOS7AlertView/CustomIOS7AlertView-Prefix.pch";
-				INFOPLIST_FILE = "CustomIOS7AlertView/CustomIOS7AlertView-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ISAlertViewDemo/ISAlertViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "ISAlertViewDemo/ISAlertViewDemo-Info.plist";
+				PRODUCT_NAME = ISAlertViewDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -325,9 +325,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CustomIOS7AlertView/CustomIOS7AlertView-Prefix.pch";
-				INFOPLIST_FILE = "CustomIOS7AlertView/CustomIOS7AlertView-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ISAlertViewDemo/ISAlertViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "ISAlertViewDemo/ISAlertViewDemo-Info.plist";
+				PRODUCT_NAME = ISAlertViewDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -335,7 +335,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5EB26CC217EC5EEA00F0971C /* Build configuration list for PBXProject "CustomIOS7AlertView" */ = {
+		5EB26CC217EC5EEA00F0971C /* Build configuration list for PBXProject "ISAlertViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5EB26CFA17EC5EEB00F0971C /* Debug */,
@@ -344,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5EB26CFC17EC5EEB00F0971C /* Build configuration list for PBXNativeTarget "CustomIOS7AlertView" */ = {
+		5EB26CFC17EC5EEB00F0971C /* Build configuration list for PBXNativeTarget "ISAlertViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5EB26CFD17EC5EEB00F0971C /* Debug */,
