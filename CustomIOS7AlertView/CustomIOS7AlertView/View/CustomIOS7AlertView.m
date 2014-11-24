@@ -85,22 +85,24 @@ CGFloat buttonSpacerHeight = 0;
 
     // Attached to the top most window (make sure we are using the right orientation):
     } else {
-        UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-        switch (interfaceOrientation) {
-            case UIInterfaceOrientationLandscapeLeft:
-                self.transform = CGAffineTransformMakeRotation(M_PI * 270.0 / 180.0);
-                break;
-                
-            case UIInterfaceOrientationLandscapeRight:
-                self.transform = CGAffineTransformMakeRotation(M_PI * 90.0 / 180.0);
-                break;
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1){
+            UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+            switch (interfaceOrientation) {
+                case UIInterfaceOrientationLandscapeLeft:
+                    self.transform = CGAffineTransformMakeRotation(M_PI * 270.0 / 180.0);
+                    break;
 
-            case UIInterfaceOrientationPortraitUpsideDown:
-                self.transform = CGAffineTransformMakeRotation(M_PI * 180.0 / 180.0);
-                break;
+                case UIInterfaceOrientationLandscapeRight:
+                    self.transform = CGAffineTransformMakeRotation(M_PI * 90.0 / 180.0);
+                    break;
 
-            default:
-                break;
+                case UIInterfaceOrientationPortraitUpsideDown:
+                    self.transform = CGAffineTransformMakeRotation(M_PI * 180.0 / 180.0);
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         [self setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
@@ -108,7 +110,7 @@ CGFloat buttonSpacerHeight = 0;
     }
 
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionCurveEaseInOut
-                   animations:^{
+                     animations:^{
                          self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4f];
                          dialogView.layer.opacity = 1.0f;
                          dialogView.layer.transform = CATransform3DMakeScale(1, 1, 1);
@@ -277,12 +279,13 @@ CGFloat buttonSpacerHeight = 0;
 
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
-        CGFloat tmp = screenWidth;
-        screenWidth = screenHeight;
-        screenHeight = tmp;
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1){
+        UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+        if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
+            CGFloat tmp = screenWidth;
+            screenWidth = screenHeight;
+            screenHeight = tmp;
+        }
     }
 
     return CGSizeMake(screenWidth, screenHeight);
@@ -328,44 +331,49 @@ CGFloat buttonSpacerHeight = 0;
         return;
     }
 
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1){
+        UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
 
-    CGFloat startRotation = [[self valueForKeyPath:@"layer.transform.rotation.z"] floatValue];
-    CGAffineTransform rotation;
+        CGFloat startRotation = [[self valueForKeyPath:@"layer.transform.rotation.z"] floatValue];
+        CGAffineTransform rotation;
+        switch (interfaceOrientation) {
+            case UIInterfaceOrientationLandscapeLeft:
+                rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 270.0 / 180.0);
+                break;
 
-    switch (interfaceOrientation) {
-        case UIInterfaceOrientationLandscapeLeft:
-            rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 270.0 / 180.0);
-            break;
+            case UIInterfaceOrientationLandscapeRight:
+                rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 90.0 / 180.0);
+                break;
 
-        case UIInterfaceOrientationLandscapeRight:
-            rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 90.0 / 180.0);
-            break;
+            case UIInterfaceOrientationPortraitUpsideDown:
+                rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 180.0 / 180.0);
+                break;
 
-        case UIInterfaceOrientationPortraitUpsideDown:
-            rotation = CGAffineTransformMakeRotation(-startRotation + M_PI * 180.0 / 180.0);
-            break;
+            default:
+                rotation = CGAffineTransformMakeRotation(-startRotation + 0.0);
+                break;
+        }
 
-        default:
-            rotation = CGAffineTransformMakeRotation(-startRotation + 0.0);
-            break;
+        [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
+                         animations:^{
+                             dialogView.transform = rotation;
+                         }
+                         completion:^(BOOL finished){
+                             // fix errors caused by being rotated one too many times
+                             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                                 UIInterfaceOrientation endInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+                                 if (interfaceOrientation != endInterfaceOrientation) {
+                                     // TODO user moved phone again before than animation ended: rotation animation can introduce errors here
+                                 }
+                             });
+                         }
+         ];
+    } else {
+        CGSize screenSize = [self countScreenSize];
+        CGSize dialogSize = [self countDialogSize];
+        [self setFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
+        dialogView.frame = CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
     }
-
-    [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
-                     animations:^{
-                         dialogView.transform = rotation;
-                     }
-                     completion:^(BOOL finished){
-                         // fix errors caused by being rotated one too many times
-                         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                             UIInterfaceOrientation endInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-                             if (interfaceOrientation != endInterfaceOrientation) {
-                                 // TODO user moved phone again before than animation ended: rotation animation can introduce errors here
-                             }
-                         });
-                     }
-     ];
-
 }
 
 // Handle keyboard show/hide changes
@@ -375,11 +383,13 @@ CGFloat buttonSpacerHeight = 0;
     CGSize dialogSize = [self countDialogSize];
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
 
-    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
-        CGFloat tmp = keyboardSize.height;
-        keyboardSize.height = keyboardSize.width;
-        keyboardSize.width = tmp;
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1){
+        UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+        if (UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
+            CGFloat tmp = keyboardSize.height;
+            keyboardSize.height = keyboardSize.width;
+            keyboardSize.width = tmp;
+        }
     }
 
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
