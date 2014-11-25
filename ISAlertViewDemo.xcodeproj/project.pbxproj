@@ -17,7 +17,7 @@
 		5EB26CE117EC5EEB00F0971C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB26CDF17EC5EEB00F0971C /* Main_iPad.storyboard */; };
 		5EB26CE417EC5EEB00F0971C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB26CE317EC5EEB00F0971C /* ViewController.m */; };
 		5EB26D0317EC642000F0971C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB26D0217EC642000F0971C /* Images.xcassets */; };
-		5EE9A9BB17EC68960031B75E /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9A9BA17EC68960031B75E /* CustomIOS7AlertView.m */; };
+		5EE9A9BB17EC68960031B75E /* ISAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9A9BA17EC68960031B75E /* ISAlertView.m */; };
 		5EE9A9BE17EC7EA60031B75E /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE9A9BD17EC7EA60031B75E /* demo.png */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +38,8 @@
 		5EB26CE317EC5EEB00F0971C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5EB26CEC17EC5EEB00F0971C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5EB26D0217EC642000F0971C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5EE9A9B917EC68960031B75E /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
-		5EE9A9BA17EC68960031B75E /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
+		5EE9A9B917EC68960031B75E /* ISAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAlertView.h; sourceTree = "<group>"; };
+		5EE9A9BA17EC68960031B75E /* ISAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAlertView.m; sourceTree = "<group>"; };
 		5EE9A9BD17EC7EA60031B75E /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,8 +116,8 @@
 		5EE9A9B817EC68650031B75E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5EE9A9BA17EC68960031B75E /* CustomIOS7AlertView.m */,
-				5EE9A9B917EC68960031B75E /* CustomIOS7AlertView.h */,
+				5EE9A9B917EC68960031B75E /* ISAlertView.h */,
+				5EE9A9BA17EC68960031B75E /* ISAlertView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EE9A9BB17EC68960031B75E /* CustomIOS7AlertView.m in Sources */,
+				5EE9A9BB17EC68960031B75E /* ISAlertView.m in Sources */,
 				5EB26CE417EC5EEB00F0971C /* ViewController.m in Sources */,
 				5EB26CDB17EC5EEB00F0971C /* AppDelegate.m in Sources */,
 				5EB26CD717EC5EEB00F0971C /* main.m in Sources */,

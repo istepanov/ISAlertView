@@ -1,15 +1,17 @@
 //
-//  CustomIOS7AlertView.m
-//  CustomIOS7AlertView
+//  ISAlertView.m
+//  ISAlertView
 //
-//  Created by Richard on 20/09/2013.
+//  Copyright (c) 2014 Ilya Stepanov
+//
+//  Based on CustomIOS7AlertView
 //  Copyright (c) 2013 Wimagguc.
 //
 //  Lincesed under The MIT License (MIT)
 //  http://opensource.org/licenses/MIT
 //
 
-#import "CustomIOS7AlertView.h"
+#import "ISAlertView.h"
 #import <QuartzCore/QuartzCore.h>
 
 const static CGFloat kCustomIOS7AlertViewDefaultButtonHeight       = 50;
@@ -17,7 +19,7 @@ const static CGFloat kCustomIOS7AlertViewDefaultButtonSpacerHeight = 1;
 const static CGFloat kCustomIOS7AlertViewCornerRadius              = 7;
 const static CGFloat kCustomIOS7MotionEffectExtent                 = 10.0;
 
-@implementation CustomIOS7AlertView
+@implementation ISAlertView
 
 CGFloat buttonHeight = 0;
 CGFloat buttonSpacerHeight = 0;
@@ -132,7 +134,7 @@ CGFloat buttonSpacerHeight = 0;
 }
 
 // Default button behaviour
-- (void)customIOS7dialogButtonTouchUpInside: (CustomIOS7AlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)customIOS7dialogButtonTouchUpInside: (ISAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSLog(@"Button Clicked! %d, %d", (int)buttonIndex, (int)[alertView tag]);
     [self close];

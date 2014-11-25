@@ -1,8 +1,10 @@
 //
 //  ViewController.m
-//  CustomIOS7AlertView
+//  ISAlertViewDemo
 //
-//  Created by Richard on 20/09/2013.
+//  Copyright (c) 2014 Ilya Stepanov
+//
+//  Based on CustomIOS7AlertView
 //  Copyright (c) 2013 Wimagguc.
 //
 //  Lincesed under The MIT License (MIT)
@@ -39,7 +41,7 @@
 - (IBAction)launchDialog:(id)sender
 {
     // Here we need to pass a full frame
-    CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] init];
+    ISAlertView *alertView = [[ISAlertView alloc] init];
 
     // Add some custom content to the alert view
     [alertView setContainerView:[self createDemoView]];
@@ -49,7 +51,7 @@
     [alertView setDelegate:self];
     
     // You may use a Block, rather than a delegate.
-    [alertView setOnButtonTouchUpInside:^(CustomIOS7AlertView *alertView, int buttonIndex) {
+    [alertView setOnButtonTouchUpInside:^(ISAlertView *alertView, int buttonIndex) {
         NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)[alertView tag]);
         [alertView close];
     }];
@@ -60,7 +62,7 @@
     [alertView show];
 }
 
-- (void)customIOS7dialogButtonTouchUpInside: (CustomIOS7AlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+- (void)customIOS7dialogButtonTouchUpInside:(ISAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
 {
     NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", (int)buttonIndex, (int)[alertView tag]);
     [alertView close];

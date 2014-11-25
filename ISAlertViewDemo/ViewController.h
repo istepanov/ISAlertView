@@ -1,8 +1,10 @@
 //
 //  ViewController.h
-//  CustomIOS7AlertView
+//  ISAlertViewDemo
 //
-//  Created by Richard on 20/09/2013.
+//  Copyright (c) 2014 Ilya Stepanov
+//
+//  Based on CustomIOS7AlertView
 //  Copyright (c) 2013 Wimagguc.
 //
 //  Lincesed under The MIT License (MIT)
@@ -10,8 +12,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CustomIOS7AlertView.h"
+#import "ISAlertView.h"
 
-@interface ViewController : UIViewController<CustomIOS7AlertViewDelegate>
+@interface ViewController : UIViewController<ISAlertViewDelegate>
 
 @end
