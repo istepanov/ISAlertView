@@ -9,19 +9,32 @@ As a solution, this class creates an iOS7-style dialog which you can extend with
 
 ![A demo screen](Docs/screen.png)
 
-## Install
+## Installation
 
-As simple as adding the following files to your project:
+There're 2 ways to add ISAlertView to your project:
 
-* CustomIOS7AlertView.h
-* CustomIOS7AlertView.m
+### 1. Install with CocoaPods
+
+Add this to your Podfile:
+
+    platform :ios, '7.0'
+    pod "ISAlertView"
+
+then run `pod install`
+
+### 2. Install manually
+
+Add the following files to your project:
+
+* ISAlertView.h
+* ISAlertView.m
 
 ## Quick start guide
 
-1. Create the UIView object `changed`
+1. Create the UIView object
 
     ```
-    CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] init];
+    ISAlertView *alertView = [[ISAlertView alloc] init];
     ```
   
 2. Add some custom content to the alert view (optional)
@@ -75,7 +88,7 @@ As simple as adding the following files to your project:
     Then add the delegate methods:
 
     ```
-    - (void)customIOS7dialogButtonTouchUpInside: (CustomIOS7AlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+    - (void)customIOS7dialogButtonTouchUpInside:(ISAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
     {
         NSLog(@"Button at position %d is clicked on alertView %d.", buttonIndex, [alertView tag]);
     }
@@ -84,7 +97,7 @@ As simple as adding the following files to your project:
 * Handle button clicks with a code block
 
     ```
-    [alertView setOnButtonTouchUpInside:^(CustomIOS7AlertView *alertView, int buttonIndex) {
+    [alertView setOnButtonTouchUpInside:^(ISAlertView *alertView, int buttonIndex) {
         NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, [alertView tag]);
         [alertView close];
     }];
@@ -103,4 +116,4 @@ This project is a fork of [Custom iOS7 AlertView](https://github.com/wimagguc/io
 
 ## License
 
-See LICENSE file
+See [LICENSE](LICENSE) file.
