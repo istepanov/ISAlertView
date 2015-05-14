@@ -2,7 +2,7 @@
 //  ISAlertView.m
 //  ISAlertView
 //
-//  Copyright (c) 2014 Ilya Stepanov
+//  Copyright (c) 2014-2015 Ilya Stepanov
 //
 //  Based on CustomIOS7AlertView
 //  Copyright (c) 2013 Wimagguc.
@@ -45,7 +45,6 @@ CGFloat buttonSpacerHeight = 0;
     if (self) {
         self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
 
-        delegate = self;
         useMotionEffects = false;
         buttonTitles = @[@"Close"];
 
@@ -60,10 +59,10 @@ CGFloat buttonSpacerHeight = 0;
 - (void)show
 {
     dialogView = [self createContainerView];
-  
+
     dialogView.layer.shouldRasterize = YES;
     dialogView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
-  
+
     self.layer.shouldRasterize = YES;
     self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
 
@@ -85,7 +84,7 @@ CGFloat buttonSpacerHeight = 0;
     if (parentView != NULL) {
         [parentView addSubview:self];
 
-    // Attached to the top most window (make sure we are using the right orientation):
+        // Attached to the top most window (make sure we are using the right orientation):
     } else {
         if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1){
             UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
@@ -131,13 +130,10 @@ CGFloat buttonSpacerHeight = 0;
     if (onButtonTouchUpInside != NULL) {
         onButtonTouchUpInside(self, (int)[sender tag]);
     }
-}
 
-// Default button behaviour
-- (void)customIOS7dialogButtonTouchUpInside: (ISAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSLog(@"Button Clicked! %d, %d", (int)buttonIndex, (int)[alertView tag]);
-    [self close];
+    if (delegate == NULL && onButtonTouchUpInside == NULL) {
+        [self close];
+    }
 }
 
 // Dialog close animation then cleaning and removing the view from the parent
@@ -223,7 +219,7 @@ CGFloat buttonSpacerHeight = 0;
             [dialogContainer addSubview:verticalLineView];
         }
     }
-    
+
     // Add the custom container if there is any
     [dialogContainer addSubview:containerView];
 

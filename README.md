@@ -1,7 +1,7 @@
 # ISAlertView
 
 
-`v0.1`
+`v0.2`
 
 The addSubview is not available in UIAlertView in iOS7 any more. The view hierarchy for this class is private and must not be modified.
 
@@ -18,7 +18,7 @@ There're 2 ways to add ISAlertView to your project:
 Add this to your Podfile:
 
     platform :ios, '7.0'
-    pod "ISAlertView"
+    pod "ISAlertView", '0.2'
 
 then run `pod install`
 

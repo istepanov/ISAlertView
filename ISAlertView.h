@@ -2,7 +2,7 @@
 //  ISAlertView.h
 //  ISAlertView
 //
-//  Copyright (c) 2014 Ilya Stepanov
+//  Copyright (c) 2014-2015 Ilya Stepanov
 //
 //  Based on CustomIOS7AlertView
 //  Copyright (c) 2013 Wimagguc.
@@ -19,7 +19,7 @@
 
 @end
 
-@interface ISAlertView : UIView<ISAlertViewDelegate>
+@interface ISAlertView : UIView
 
 @property (nonatomic, retain) UIView *parentView;    // The parent view this 'dialog' is attached to
 @property (nonatomic, retain) UIView *dialogView;    // Dialog's container view
