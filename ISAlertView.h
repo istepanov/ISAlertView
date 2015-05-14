@@ -31,7 +31,7 @@
 
 @property (copy) void (^onButtonTouchUpInside)(ISAlertView *alertView, int buttonIndex) ;
 
-- (id)init;
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 
 - (void)show;
 - (void)close;
